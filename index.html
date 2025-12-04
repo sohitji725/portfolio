@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudPortfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; }
+
+    /* Animações customizadas */
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .fade-in-left { opacity: 0; }
+    .fade-in-right { opacity: 0; }
+    .fade-in-left.show { animation: fadeInLeft 1s ease forwards; }
+    .fade-in-right.show { animation: fadeInRight 1s ease forwards; }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+
+<!-- Header -->
+<header class="bg-gray-950 text-gray-300 sticky top-0 z-50 shadow-lg">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+      Sohit's Portfolio
+    </div>
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
+      <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+      <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
+      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
+      <!-- <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300">Experience</a> -->
+      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+    </nav>
+    <!-- Botão Mobile -->
+    <button class="md:hidden focus:outline-none" id="menu-toggle">
+      <i class="fas fa-bars text-2xl text-cyan-400"></i>
+    </button>
+  </div>
+  <!-- Menu Mobile -->
+  <div class="md:hidden hidden bg-gray-900 w-full py-4 px-6 border-t border-gray-700" id="mobile-menu">
+    <div class="flex flex-col space-y-3">
+      <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
+      <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+      <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300">Skills</a>
+      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300">Projects</a>
+      <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300">Experience</a>
+      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="relative text-center py-32 bg-gray-900 overflow-hidden">
+
+  <div class="container mx-auto px-6 relative z-10">
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-cyan-400 mb-6 font-poppins drop-shadow-xl">
+Cloud & DevOps Engineer
+    </h1>
+    <h2 class="text-2xl md:text-3xl lg:text-5xl text-purple-400 font-semibold mb-10 font-poppins drop-shadow-md">
+As a Cloud & DevOps Engineer, I build and automate scalable, secure, and reliable systems—from CI/CD pipelines to serverless cloud infrastructure.    </h2>
+    
+
+    <!-- Botões -->
+    <div class="flex justify-center space-x-6 mt-10">
+      <a href="#contact" class="bg-cyan-500 text-gray-900 px-10 py-5 text-xl rounded-lg font-semibold hover:bg-cyan-400 transition">Contact Me</a>
+      <a href="#projects" class="border border-cyan-500 px-10 py-5 text-xl rounded-lg font-semibold hover:bg-cyan-500 hover:text-gray-900 transition">See Projects</a>
+    </div>
+  </div>
+
+  <!-- Ícones de Serviços AWS -->
+  <div class="flex justify-center gap-10 mt-20">
+    <div class="flex flex-col items-center transform translate-y-4">
+      <img src="src/img/ec2.jpg" alt="EC2" class="w-24 h-24 mb-3 hover:scale-110 transition">
+      <p class="text-gray-200 font-medium text-lg">EC2</p>
+    </div>
+    <div class="flex flex-col items-center transform -translate-y-4">
+      <img src="src/img/vpc.png" alt="VPC" class="w-24 h-24 mb-3 hover:scale-110 transition">
+      <p class="text-gray-200 font-medium text-lg">VPC</p>
+    </div>
+    <div class="flex flex-col items-center transform translate-y-4">
+      <img src="src/img/s3.png" alt="S3" class="w-24 h-24 mb-3 hover:scale-110 transition">
+      <p class="text-gray-200 font-medium text-lg">S3</p>
+    </div>
+    <div class="flex flex-col items-center transform -translate-y-4">
+      <img src="src/img/rds.jpg" alt="RDS" class="w-24 h-24 mb-3 hover:scale-110 transition">
+      <p class="text-gray-200 font-medium text-lg">RDS</p>
+    </div>
+    <div class="flex flex-col items-center transform translate-y-4">
+      <img src="src/img/iam.png" alt="IAM" class="w-24 h-24 mb-3 hover:scale-110 transition">
+      <p class="text-gray-200 font-medium text-lg">IAM</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+    
+    <!-- Foto de Perfil -->
+    <div class="md:w-1/3 fade-in-left flex justify-center">
+      <img 
+        src="assets/icons/photo_2025-11-07_20-04-03 (2).jpg" 
+        alt="Heberton Geovane" 
+        class="rounded-full border-4 border-cyan-500 shadow-2xl w-64 h-64 object-cover"
+      >
+    </div>
+
+    <!-- Texto -->
+    <div class="md:w-2/3 fade-in-right text-center md:text-left">
+      <h3 class="text-6xl font-bold text-cyan-400 mb-6 font-poppins">
+About me
+      </h3>
+     <p class="text-gray-300 mb-8 leading-relaxed font-light text-lg max-w-2xl">
+  I am a recent Master of Computer Application graduate specializing in <span class="text-cyan-400 font-medium">Cloud and DevOps</span>. 
+  My passion is building and automating systems-level infrastructure, with a focus on 
+  <span class="text-purple-400">CI/CD</span>, container orchestration (<span class="text-cyan-400">Docker, Kubernetes</span>), 
+  and modern GitOps workflows. My hands-on projects with <span class="text-purple-400">Jenkins, AWS EKS, and Lambda</span> 
+  have prepared me to enhance production reliability and manage cloud infrastructure at scale.
+</p>
+
+
+      <a 
+        href="src/img/Sohit-Devops.pdf" 
+        download 
+        class="bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:opacity-90 transition"
+      >
+        📄 Download CV
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">My Skills</h2>
+    
+    <!-- Cloud & DevOps -->
+    <div class="mb-16 fade-in-left">
+      <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Cloud & DevOps</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        
+        <a href="#" target="_blank"
+           class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-aws text-4xl text-orange-400 mb-3"></i>
+          <span class="font-medium text-gray-200">AWS</span>
+        </a>
+
+        <a href="#" ltw1target="_blank"
+           class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-linux text-4xl text-gray-300 mb-3"></i>
+          <span class="font-medium text-gray-200">Kubernetes</span>
+        </a>
+         <a href="#" ltw1target="_blank"
+           class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="<i fa-brands fa-jenkins text-4xl text-red-300 mb-3"></i>
+          <span class="font-medium text-gray-200">Jenkins</span>
+      
+       <a href="#" ltw1target="_blank"
+           class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-linux text-4xl text-gray-300 mb-3"></i>
+          <span class="font-medium text-gray-200">Linux</span>
+        </a>
+
+        <a href="#" target="_blank"
+           class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-docker text-4xl text-blue-400 mb-3"></i>
+          <span class="font-medium text-gray-200">Docker</span>
+        </a>
+
+        <a href="#" target="_blank"
+           class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fas fa-code text-4xl text-indigo-400 mb-3"></i>
+          <span class="font-medium text-gray-200">Terraform</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Versionamento & CI/CD -->
+    <div class="mb-16 fade-in-right">
+      <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Version Control & CI/CD</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-git-alt text-4xl text-red-500 mb-3"></i>
+          <span class="font-medium text-gray-200">Git</span>
+        </div>
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-github text-4xl text-gray-200 mb-3"></i>
+          <span class="font-medium text-gray-200">GitHub</span>
+        </div>
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fas fa-cogs text-4xl text-blue-400 mb-3"></i>
+          <span class="font-medium text-gray-200">GitHub Actions</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Frontend -->
+    <div class="mb-16 fade-in-left">
+      <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Frontend</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+          <span class="font-medium text-gray-200">HTML</span>
+        </div>
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3"></i>
+          <span class="font-medium text-gray-200">CSS</span>
+        </div>
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-js-square text-4xl text-yellow-400 mb-3"></i>
+          <span class="font-medium text-gray-200">JavaScript</span>
+        </div>
+          <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fa-brands fa-react text-4xl text-yellow-400 mb-3"></i>
+          <span class="font-medium text-gray-200">React.js</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Backend & Linguagens -->
+    <div class="mb-16 fade-in-right">
+      <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Languages & Backend</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fab fa-python text-4xl text-green-400 mb-3"></i>
+          <span class="font-medium text-gray-200">Python</span>
+        </div>
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fa-brands fa-node-js text-4xl text-green-400 mb-3"></i>
+          <span class="font-medium text-gray-200">Node.js</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ferramentas -->
+    <div class="fade-in-left">
+      <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Tools</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <div class="tech-icon bg-gray-800 border border-cyan-500 p-6 rounded-xl shadow-lg flex flex-col items-center hover:shadow-cyan-500/50 hover:scale-105 transition transform">
+          <i class="fas fa-code text-4xl text-indigo-400 mb-3"></i>
+          <span class="font-medium text-gray-200">VS Code</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">Projects</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Projeto AWS -->
+      <div class="project-card bg-gray-800 border border-cyan-500 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition transform hover:scale-105 fade-in-up">
+        <div class="h-48 bg-gray-700 flex items-center justify-center">
+          <i class="fab fa-aws text-6xl text-orange-400"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">
+            <a href="https://github.com/HebertonGeovane/TechStore2" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+              End-to-End CI/CD Implementation — Jenkins & Kubernetes
+            </a>
+          </h3>
+          <p class="text-gray-300 mb-4">
+            
+Orchestrated an end-to-end CI/CD pipeline in Jenkins, automating the full software delivery lifecycle. The CI stage builds Java apps (Maven), checks quality (SonarQube), and builds Docker images. A GitOps-based CD workflow (Argo CD) then deploys new versions to a Kubernetes cluster. </p>
+        </div>
+      </div>
+      
+<!-- Projeto E-Commerce DevOps -->
+<div class="project-card bg-gray-800 border border-cyan-500 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition transform hover:scale-105 fade-in-up">
+  <div class="h-48 bg-gray-700 flex items-center justify-center">
+    <img src="assets/devops-logo-png_seeklogo-423085.png" class="size-14" alt="EKS Icon">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold mb-2">
+      <a href="#" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+        E-Commerce DevOps Implementation
+      </a>
+    </h3>
+    <p class="text-gray-300 mb-4">
+      Implemented DevOps for a multi-microservice E-commerce app, including containerization, CI/CD, and IaC.<br>
+      Provisioned AWS EKS with Terraform in a custom VPC.<br>
+      Automated deployment using GitHub Actions and Argo CD.<br>
+      Secured access with AWS Load Balancers and Route 53 DNS mapping.
+    </p>
+  </div>
+</div>
+
+        <!-- Projeto Docker -->
+      <div class="project-card bg-gray-800 border border-cyan-500 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition transform hover:scale-105 fade-in-up">
+        <div class="h-48 bg-gray-700 flex items-center justify-center">
+          <img src="assets/icons/kubernetes.svg.svg" class="size-14"></img>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">
+            <a href="https://github.com/HebertonGeovane/Desafio-03_Semana-12_TIRex_HebertonGeovane." target="_blank" class="text-cyan-400 hover:text-cyan-300">
+              Scalable Game Deployment on Serverless Kubernetes — AWS EKS
+            </a>
+          </h3>
+          <p class="text-gray-300 mb-4">
+           Architected and deployed a highly available application on AWS EKS using Fargate, automating worker node provisioning. Installed the AWS Load Balancer Controller (Helm) to dynamically provision an ALB via a Kubernetes Ingress. Enhanced security with a dedicated EKS Fargate Profile for the application namespace. </p>
+        </div>
+      </div> 
+      <!-- Projeto Docker -->
+      <div class="project-card bg-gray-800 border border-cyan-500 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition transform hover:scale-105 fade-in-up">
+        <div class="h-48 bg-gray-700 flex items-center justify-center">
+          <img src="assets/icons/Terraform-Logo.png" class="size-14"></img>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">
+            <a href="https://github.com/HebertonGeovane/Desafio-03_Semana-12_TIRex_HebertonGeovane." target="_blank" class="text-cyan-400 hover:text-cyan-300">
+Terraform Automated AWS Infrastructure
+            </a>
+          </h3>
+          <p class="text-gray-300 mb-4">
+Designed and deployed a production-ready AWS infrastructure using Terraform, combining multi-AZ VPC networking, bastion host access, and Auto Scaling EC2 instances with scalable EKS Kubernetes clusters. Implemented security best practices using Security Groups and NACLs, and managed infrastructure state with S3 and DynamoDB for automated, collaborative, and highly available deployments.        </div>
+
+      </div>
+       <!-- Projeto Docker -->
+      <div class="project-card bg-gray-800 border border-cyan-500 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition transform hover:scale-105 fade-in-up">
+        <div class="h-48 bg-gray-700 flex items-center justify-center">
+          <img src="assets/icons/vpc.png" class="size-14"></img>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">
+            <a href="https://github.com/HebertonGeovane/Desafio-03_Semana-12_TIRex_HebertonGeovane." target="_blank" class="text-cyan-400 hover:text-cyan-300">
+        Highly Available and Secure AWS VPC Architecture
+            </a>
+          </h3>
+          <p class="text-gray-300 mb-4">
+      Architected a multi-AZ AWS VPC with public and private subnets, bastion host access, Auto Scaling EC2 instances, NAT & Internet Gateways, and an ALB. Implemented layered security with Security Groups and NACLs, ensuring secure, scalable, and production-ready traffic flow to private application servers.
+        </div>
+
+      </div>
+      
+      
+      <!-- Projeto Terraform -->
+      <div class="project-card bg-gray-800 border border-cyan-500 rounded-xl overflow-hidden shadow-lg hover:shadow-cyan-500/40 transition transform hover:scale-105 fade-in-up">
+        <div class="h-48 bg-gray-700 flex items-center justify-center">
+          <img src="assets/icons/d69cf730f9efa24c16708ea76fe6452f.jpg" class="size-14"></img>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">
+            <a href="https://github.com/HebertonGeovane/Projeto-Terraform-AWS-IaC" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+Automated AWS Cost Optimization for EBS            </a>
+          </h3>
+          <p class="text-gray-300 mb-4">
+            
+Engineered a serverless cost-optimization solution using AWS Lambda and Python (Boto3) to automatically scan for and delete orphaned EBS snapshots. The logic cross-references snapshots against active instances and is triggered by Amazon EventBridge for continuous, multi-region governance.          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  
+</section>
+
+
+<!-- Education & Certifications -->
+  <section id="education" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 reveal">
+      <h2 class="text-3xl font-bold text-cyan-300 mb-6">Education & Certifications</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[var(--card)] p-6 rounded-xl border border-neutral-800">
+          <h3 class="font-semibold text-purple-300">Education</h3>
+          <ul class="mt-4 text-gray-300 space-y-3">
+            <li>
+              <strong>Master of Computer Application (MCA)</strong><br>
+              2023 - 2025 — Bundelkhand University, Jhansi, U.P, India
+            </li>
+            <li>
+              <strong>Bachelor of Computer Application (BCA)</strong><br>
+              2020 - 2023 — Bundelkhand University, Jhansi, U.P, India
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-[var(--card)] p-6 rounded-xl border border-neutral-800">
+          <h3 class="font-semibold text-purple-300">Certifications</h3>
+          <ul class="mt-4 text-gray-300 space-y-3">
+            <li>AWS Certified Cloud Practitioner</li>
+            <li>AWS Networking Basics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Contact Section --> 
+  <!-- Contact -->
+  <section id="contact" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 reveal">
+        <h2 class="text-3xl font-bold text-cyan-300 mb-6">Contact Me</h2>
+      <div class="bg-[var(--card)] p-8 rounded-xl border border-neutral-800 md:flex md:justify-between md:items-center">
+        <div>
+          <h2 class="text-2xl font-bold text-cyan-300">Get In Touch</h2>
+          <p class="text-gray-300 mt-2">Let's talk about your project. I'm actively seeking opportunities in Cloud and DevOps Engineering. Let's connect!</p>
+
+          <div class="mt-4 space-y-2 text-gray-300">
+            <div><strong>Email:</strong> <a href="mailto:sohitsahu725@gmail.com" class="text-cyan-300">sohitsahu725@gmail.com</a></div>
+            <div><strong>Phone:</strong> <a href="tel:+918737810375" class="text-cyan-300">+91 8737810375</a></div>
+            <div><strong>Location:</strong> Jhansi, Uttar Pradesh, India</div>
+          </div>
+        </div>
+
+        <div class="mt-6 md:mt-0 md:flex md:flex-col md:items-end">
+          <div class="flex gap-3">
+            <a href="https://github.com/sohitji725" target="_blank" rel="noopener noreferrer" class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-cyan-600 text-white"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sohit-sahu-48591522a" target="_blank" rel="noopener noreferrer" class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-cyan-600 text-white"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-cyan-600 text-white"><i class="fab fa-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="bg-gray-950 text-gray-300 py-8">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center font-poppins">
+      
+      <!-- Logo -->
+      <div class="text-2xl font-bold mb-4 md:mb-0 tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        Sohit's Portfolio
+      </div>
+      
+      <!-- Copyright -->
+      <div class="text-base text-blue-200 opacity-80">
+        © 2025 <span class="font-medium text-white">Sohit sahu</span>.  
+        All rights reserved
+      </div>
+    </div>
+  </div>
+</footer>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+  <script>
+    // Mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // IntersectionObserver para animar
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
